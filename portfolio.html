@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bacha Sai Kiran — Senior Customer Success Executive</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy:   #0B1F4B;
+    --blue:   #1B5EAB;
+    --accent: #2563EB;
+    --light:  #EFF6FF;
+    --border: #DBEAFE;
+    --text:   #1E293B;
+    --muted:  #64748B;
+    --white:  #FFFFFF;
+    --bg:     #F8FAFC;
+    --tag-bg: #EFF6FF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 15px;
+  }
+
+  /* ── FADE-IN ON LOAD ── */
+  .fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
+  .fade-in:nth-child(1) { animation-delay: 0.1s; }
+  .fade-in:nth-child(2) { animation-delay: 0.2s; }
+  .fade-in:nth-child(3) { animation-delay: 0.3s; }
+  .fade-in:nth-child(4) { animation-delay: 0.4s; }
+  .fade-in:nth-child(5) { animation-delay: 0.5s; }
+  @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+  .nav-logo {
+    font-family: 'Lora', serif;
+    font-weight: 700; font-size: 17px;
+    color: var(--navy);
+    letter-spacing: -0.3px;
+  }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    font-size: 13px; font-weight: 500;
+    color: var(--muted); text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center;
+    padding: 80px 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 80% 30%, rgba(37,99,235,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 20% 80%, rgba(27,94,171,0.12) 0%, transparent 50%);
+  }
+  /* dot grid */
+  .hero-bg::after {
+    content:''; position:absolute; inset:0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+  .hero-inner {
+    max-width: 860px; margin: 0 auto;
+    position: relative; z-index: 1;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: #60A5FA; margin-bottom: 24px;
+  }
+  .hero-eyebrow span {
+    width: 28px; height: 1px; background: #60A5FA; display: block;
+  }
+  .hero-name {
+    font-family: 'Lora', serif;
+    font-size: clamp(38px, 6vw, 62px);
+    font-weight: 700; line-height: 1.1;
+    color: #FFFFFF; margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+  .hero-title {
+    font-size: 17px; font-weight: 400;
+    color: #93C5FD; margin-bottom: 32px;
+    letter-spacing: 0.2px;
+  }
+  .hero-summary {
+    font-size: 15.5px; line-height: 1.75;
+    color: #CBD5E1; max-width: 680px;
+    margin-bottom: 40px;
+  }
+  .hero-tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 44px;
+  }
+  .hero-tag {
+    padding: 6px 14px; border-radius: 20px;
+    font-size: 12px; font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #CBD5E1; background: rgba(255,255,255,0.06);
+  }
+  .hero-cta {
+    display: flex; gap: 14px; flex-wrap: wrap;
+  }
+  .btn-primary {
+    padding: 12px 28px; border-radius: 6px;
+    font-size: 14px; font-weight: 600;
+    background: var(--accent); color: #fff;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #1D4ED8; transform: translateY(-1px); }
+  .btn-outline {
+    padding: 12px 28px; border-radius: 6px;
+    font-size: 14px; font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #E2E8F0; text-decoration: none;
+    transition: border-color 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.5); transform: translateY(-1px); }
+
+  /* ── STATS STRIP ── */
+  #stats {
+    background: var(--accent);
+    padding: 28px 40px;
+  }
+  .stats-grid {
+    max-width: 860px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .stat-item { text-align: center; }
+  .stat-number {
+    font-family: 'Lora', serif;
+    font-size: 30px; font-weight: 700;
+    color: #fff; display: block; line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 12px; font-weight: 500;
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 72px 40px; }
+  .section-inner { max-width: 860px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 8px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::after {
+    content:''; flex:1; height:1px;
+    background: var(--border);
+  }
+  .section-title {
+    font-family: 'Lora', serif;
+    font-size: 28px; font-weight: 700;
+    color: var(--navy); margin-bottom: 36px;
+    letter-spacing: -0.5px;
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--white); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .skill-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .skill-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.06);
+  }
+  .skill-card-title {
+    font-size: 13px; font-weight: 600;
+    color: var(--navy); margin-bottom: 6px;
+  }
+  .skill-card-desc {
+    font-size: 12.5px; color: var(--muted); line-height: 1.5;
+  }
+
+  /* Tools row */
+  .tools-row {
+    margin-top: 32px;
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .tool-tag {
+    padding: 5px 13px; border-radius: 4px;
+    font-size: 12.5px; font-weight: 500;
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    color: var(--blue);
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--bg); }
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before {
+    content:''; position:absolute; left:0; top:8px; bottom:0;
+    width: 2px; background: var(--border);
+  }
+  .exp-item {
+    position: relative; margin-bottom: 48px;
+  }
+  .exp-item::before {
+    content:''; position:absolute;
+    left: -29px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 3px var(--border);
+  }
+  .exp-header {
+    display: flex; flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px; margin-bottom: 6px;
+  }
+  .exp-title {
+    font-family: 'Lora', serif;
+    font-size: 18px; font-weight: 600;
+    color: var(--navy);
+  }
+  .exp-date {
+    font-size: 12.5px; font-weight: 500;
+    color: var(--accent);
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    padding: 3px 10px; border-radius: 4px;
+    white-space: nowrap;
+  }
+  .exp-company {
+    font-size: 14px; font-weight: 500;
+    color: var(--blue); margin-bottom: 4px;
+  }
+  .exp-scope {
+    font-size: 12.5px; color: var(--muted);
+    font-style: italic; margin-bottom: 14px;
+  }
+  .exp-bullets { list-style: none; }
+  .exp-bullets li {
+    font-size: 14px; color: var(--text);
+    padding: 4px 0 4px 18px;
+    position: relative; line-height: 1.6;
+  }
+  .exp-bullets li::before {
+    content:'▸'; position:absolute; left:0;
+    color: var(--accent); font-size: 12px; top:5px;
+  }
+  .exp-bullets strong { color: var(--navy); }
+
+  /* ── CLIENTS ── */
+  #clients { background: var(--white); }
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+  }
+  .client-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+  .client-card:hover { border-color: var(--accent); }
+  .client-name {
+    font-size: 13px; font-weight: 600;
+    color: var(--navy); display: block; margin-bottom: 4px;
+  }
+  .client-sector {
+    font-size: 11.5px; color: var(--muted);
+  }
+
+  /* ── AWARDS ── */
+  #awards { background: var(--bg); }
+  .awards-list { display: flex; flex-direction: column; gap: 16px; }
+  .award-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 18px 22px;
+    transition: box-shadow 0.2s;
+  }
+  .award-item:hover { box-shadow: 0 2px 16px rgba(37,99,235,0.08); }
+  .award-title {
+    font-size: 14px; font-weight: 600;
+    color: var(--navy); margin-bottom: 5px;
+  }
+  .award-desc {
+    font-size: 13.5px; color: var(--muted); line-height: 1.55;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--navy);
+    padding: 72px 40px;
+    text-align: center;
+  }
+  #contact .section-label { justify-content: center; color:#60A5FA; }
+  #contact .section-label::after { display:none; }
+  #contact .section-title { color:#fff; margin-bottom:14px; }
+  .contact-sub {
+    color: #93C5FD; font-size:15px; margin-bottom:36px;
+  }
+  .contact-links {
+    display: flex; justify-content: center;
+    gap: 14px; flex-wrap: wrap;
+  }
+  .contact-chip {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 20px; border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #E2E8F0; font-size: 13.5px; font-weight: 500;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .contact-chip:hover {
+    border-color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.05);
+  }
+  .contact-chip svg { width:16px;height:16px;fill:currentColor; flex-shrink:0; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060E22;
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity:0; transform:translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width:680px) {
+    nav { padding: 0 20px; }
+    .nav-links { display:none; }
+    section, #hero, #contact { padding: 56px 20px; }
+    .stats-grid { grid-template-columns: repeat(2,1fr); gap:16px; }
+    .hero-name { font-size: 36px; }
+    #stats { padding: 28px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">Bacha Sai Kiran</span>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow fade-in"><span></span> Senior Customer Success Executive</div>
+    <h1 class="hero-name fade-in">Bacha Sai Kiran</h1>
+    <p class="hero-title fade-in">Enterprise B2B SaaS &nbsp;·&nbsp; Implementation Lead &nbsp;·&nbsp; GovTech &amp; Global Accounts</p>
+    <p class="hero-summary fade-in">
+      4+ years delivering end-to-end SaaS implementations, no-code workflow automation, and strategic customer success across enterprise and government accounts. Proven across Indian Navy, DRDO, Adani, Yum! Brands, and international clients in Dubai &amp; Saudi Arabia.
+    </p>
+    <div class="hero-tags fade-in">
+      <span class="hero-tag">Customer Success Management</span>
+      <span class="hero-tag">Workflow Automation — Quixy</span>
+      <span class="hero-tag">GovTech Delivery</span>
+      <span class="hero-tag">Solution Consulting</span>
+      <span class="hero-tag">UAT &amp; Go-Live</span>
+      <span class="hero-tag">Stakeholder Management</span>
+      <span class="hero-tag">Open to Remote Roles</span>
+    </div>
+    <div class="hero-cta fade-in">
+      <a href="#contact" class="btn-primary">Get In Touch</a>
+      <a href="#experience" class="btn-outline">View Experience</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-number">10+</span>
+      <span class="stat-label">Enterprise Accounts</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">15+</span>
+      <span class="stat-label">POCs → Full Deployment</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">30+</span>
+      <span class="stat-label">Escalations Resolved</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">100%</span>
+      <span class="stat-label">SLA Resolution Rate</span>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label reveal">Core Competencies</div>
+    <h2 class="section-title reveal">Skills &amp; Expertise</h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Customer Success Management</div>
+        <div class="skill-card-desc">End-to-end lifecycle ownership — onboarding, adoption, health monitoring, QBR/EBR, renewals, and expansion across enterprise portfolios.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">SaaS Implementation &amp; Go-Live</div>
+        <div class="skill-card-desc">Full lifecycle delivery — requirement discovery, solution configuration, UAT coordination, go-live execution, and post-production stabilisation.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">No-Code Workflow Automation</div>
+        <div class="skill-card-desc">Designing and delivering scalable process automation on the Quixy platform — eliminating manual tasks without engineering dependency.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">GovTech &amp; Enterprise Delivery</div>
+        <div class="skill-card-desc">Managing multi-stakeholder government programmes with strict SLA, compliance, and phased rollout requirements across defence and state bodies.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Solution Consulting &amp; POC Delivery</div>
+        <div class="skill-card-desc">Bridging pre-sales and post-sales — independently running executive POCs, solution demos, and business alignment sessions for enterprise clients.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Escalation &amp; Risk Management</div>
+        <div class="skill-card-desc">Owning critical escalations with 100% SLA resolution. Proactively identifying at-risk account signals to prevent churn ahead of renewal cycles.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Stakeholder &amp; C-Suite Engagement</div>
+        <div class="skill-card-desc">Direct engagement with C-suite and Director-level stakeholders across Indian government, defence organisations, and international enterprise clients.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Reporting &amp; Analytics</div>
+        <div class="skill-card-desc">Designing operational and executive dashboards using Bold BI and Quixy reporting — enabling data-driven stakeholder communication and QBR sessions.</div>
+      </div>
+    </div>
+    <div class="tools-row reveal">
+      <span class="tool-tag">Quixy Platform</span>
+      <span class="tool-tag">Bold BI</span>
+      <span class="tool-tag">Power BI</span>
+      <span class="tool-tag">SQL</span>
+      <span class="tool-tag">REST API</span>
+      <span class="tool-tag">MS Excel (Advanced)</span>
+      <span class="tool-tag">CRM Tools</span>
+      <span class="tool-tag">Diagram.io</span>
+      <span class="tool-tag">Prompt AI</span>
+      <span class="tool-tag">ERP Implementation</span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label reveal">Career History</div>
+    <h2 class="section-title reveal">Work Experience</h2>
+    <div class="timeline">
+
+      <!-- ROLE 1 -->
+      <div class="exp-item reveal">
+        <div class="exp-header">
+          <div class="exp-title">Senior Customer Success Executive</div>
+          <span class="exp-date">Feb 2025 – Present</span>
+        </div>
+        <div class="exp-company">VividMinds Technologies Pvt. Ltd &nbsp;|&nbsp; Quixy Platform</div>
+        <div class="exp-scope">Scope: 10+ active enterprise &amp; government accounts &nbsp;|&nbsp; Parallel programme management &nbsp;|&nbsp; Team mentorship</div>
+        <ul class="exp-bullets">
+          <li>Spearheaded end-to-end lifecycle management for <strong>10+ enterprise and government accounts</strong> — Indian Navy, Adani, DRDO, TNGB, TSWC, Yum India (KFC), Ruaal Madinah, and MShips — maintaining a <strong>90%+ on-time delivery rate</strong> across all implementations.</li>
+          <li>Owned escalation management for <strong>30+ critical incidents</strong>, achieving <strong>100% SLA resolution rate</strong> and directly preventing churn through proactive account health monitoring.</li>
+          <li>Designed and delivered no-code workflow automation on Quixy for high-complexity government programmes — TGSRTC, Ruaal Madinah (Saudi Arabia), MShips (Dubai maritime), and Safety Management systems.</li>
+          <li>Facilitated <strong>Quarterly Business Reviews (QBRs)</strong> and executive stakeholder sessions with C-suite and Director-level clients, leveraging Bold BI dashboards to present adoption metrics and expansion opportunities.</li>
+          <li>Bridged pre-sales and post-sales by supporting solution demos, <strong>POC execution</strong>, and feasibility workshops — managing post-POC transition to full implementation without handoff delays.</li>
+          <li>Mentored new team members on Quixy platform configuration and enterprise delivery methodology, increasing team delivery capacity.</li>
+        </ul>
+      </div>
+
+      <!-- ROLE 2 -->
+      <div class="exp-item reveal">
+        <div class="exp-header">
+          <div class="exp-title">Customer Success Executive</div>
+          <span class="exp-date">Nov 2023 – Jan 2025</span>
+        </div>
+        <div class="exp-company">VividMinds Technologies Pvt. Ltd &nbsp;|&nbsp; Quixy Platform</div>
+        <div class="exp-scope">Scope: Full lifecycle ownership — 10+ enterprise &amp; government deployments &nbsp;|&nbsp; Onsite &amp; remote delivery</div>
+        <ul class="exp-bullets">
+          <li>Executed UAT coordination and go-live management for <strong>10+ enterprise deployments</strong> — Indian Navy (DOA), TNeGA, Adani, Fenesta, Al Shirawi, Ruaal Madinah — achieving a <strong>100% first-time UAT pass rate</strong>.</li>
+          <li>Delivered government digital transformation programmes for state and central defence organisations, navigating <strong>multi-stakeholder governance</strong> and zero-failure SLA environments.</li>
+          <li>Architected scalable no-code workflow automation on Quixy, translating complex business requirements into production-ready automated workflows without engineering dependency.</li>
+          <li>Conducted POCs and business feasibility sessions during onboarding, securing stakeholder buy-in before deployment and improving overall implementation success rates.</li>
+          <li>Drove post-go-live adoption through client training, product walkthroughs, and user documentation — enabling customer self-sufficiency and reducing post-launch support load.</li>
+        </ul>
+      </div>
+
+      <!-- ROLE 3 -->
+      <div class="exp-item reveal">
+        <div class="exp-header">
+          <div class="exp-title">Associate Customer Success Executive</div>
+          <span class="exp-date">May 2022 – Nov 2022</span>
+        </div>
+        <div class="exp-company">VividMinds Technologies Pvt. Ltd &nbsp;|&nbsp; Quixy Platform</div>
+        <div class="exp-scope">Scope: Implementation support, QA, POC participation — foundational enterprise SaaS delivery</div>
+        <ul class="exp-bullets">
+          <li>Supported full lifecycle SaaS implementation — from requirement analysis through configuration, testing, and go-live — across multiple pilot and production environments.</li>
+          <li>Participated in POC demonstrations for prospective clients including Mega Corp, SITA, and Haikhim — gaining hands-on pre-sales and solution consulting exposure.</li>
+          <li>Managed defect tracking, enhancement logging, and client feedback coordination — ensuring timely resolution and preparing functional documentation for all implementations.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="section-inner">
+    <div class="section-label reveal">Key Portfolio</div>
+    <h2 class="section-title reveal">Clients &amp; Sectors Served</h2>
+    <div class="clients-grid">
+      <div class="client-card reveal"><span class="client-name">Indian Navy (DOA)</span><span class="client-sector">Government &amp; Defence</span></div>
+      <div class="client-card reveal"><span class="client-name">DRDO</span><span class="client-sector">Central Defence Organisation</span></div>
+      <div class="client-card reveal"><span class="client-name">Tamil Nadu e-Gov (TNeGA)</span><span class="client-sector">State Government / GovTech</span></div>
+      <div class="client-card reveal"><span class="client-name">TGSRTC</span><span class="client-sector">State Transport / Government</span></div>
+      <div class="client-card reveal"><span class="client-name">TNGB &amp; TSWC</span><span class="client-sector">Government Enterprises</span></div>
+      <div class="client-card reveal"><span class="client-name">Adani Group</span><span class="client-sector">Enterprise / Conglomerate</span></div>
+      <div class="client-card reveal"><span class="client-name">Yum! Brands (KFC India)</span><span class="client-sector">FMCG &amp; QSR Enterprise</span></div>
+      <div class="client-card reveal"><span class="client-name">Ruaal Madinah</span><span class="client-sector">Saudi Government / GCC</span></div>
+      <div class="client-card reveal"><span class="client-name">MShips</span><span class="client-sector">Maritime Operations / Dubai</span></div>
+      <div class="client-card reveal"><span class="client-name">Al Shirawi</span><span class="client-sector">Enterprise / UAE</span></div>
+      <div class="client-card reveal"><span class="client-name">Fenesta</span><span class="client-sector">Manufacturing / Enterprise</span></div>
+      <div class="client-card reveal"><span class="client-name">Varma Marines &amp; Vishwa</span><span class="client-sector">Logistics &amp; Aggregates</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-inner">
+    <div class="section-label reveal">Recognition</div>
+    <h2 class="section-title reveal">Awards &amp; Recognition</h2>
+    <div class="awards-list">
+      <div class="award-item reveal">
+        <div class="award-title">Employee of the Month — VividMinds Technologies</div>
+        <div class="award-desc">Awarded for demonstrated leadership in enterprise customer success, implementation delivery excellence, and cross-functional team contribution.</div>
+      </div>
+      <div class="award-item reveal">
+        <div class="award-title">Government Client Recognition — Tamil Nadu e-Governance Agency (TNeGA)</div>
+        <div class="award-desc">Formally recognised by TNeGA leadership for successful delivery of high-compliance government automation initiatives, structured multi-stakeholder coordination, and on-schedule programme execution.</div>
+      </div>
+      <div class="award-item reveal">
+        <div class="award-title">Client Appreciation — Yum! Brands (KFC India)</div>
+        <div class="award-desc">Received formal appreciation from Yum! Brands stakeholders for seamless enterprise workflow implementation, proactive issue resolution, and stable go-live execution with zero post-deployment disruptions.</div>
+      </div>
+      <div class="award-item reveal">
+        <div class="award-title">POC-to-Deployment Excellence</div>
+        <div class="award-desc">Delivered 15+ executive-level Proof of Concepts (POCs) across enterprise and government clients, achieving 100% conversion to full production deployment.</div>
+      </div>
+      <div class="award-item reveal">
+        <div class="award-title">Consistent Delivery &amp; Cross-Functional Leadership</div>
+        <div class="award-desc">Repeatedly commended for on-time project delivery, onsite implementation quality, proactive escalation ownership, and effective coordination across Sales, Product, and Engineering in high-stakes environments.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label reveal">Let's Connect</div>
+    <h2 class="section-title reveal">Get In Touch</h2>
+    <p class="contact-sub reveal">Open to remote roles — Customer Success Manager · Solution Consultant · Implementation Lead · Enterprise Account Manager</p>
+    <div class="contact-links reveal">
+      <a class="contact-chip" href="mailto:bachasaikiran@gmail.com">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        bachasaikiran@gmail.com
+      </a>
+      <a class="contact-chip" href="tel:+917207327129">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        +91 7207327129
+      </a>
+      <a class="contact-chip" href="#">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Hyderabad, India
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Bacha Sai Kiran &nbsp;·&nbsp; Senior Customer Success Executive &nbsp;·&nbsp; Enterprise B2B SaaS
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav active state
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#'+current ? 'var(--accent)' : '';
+    });
+  });
+</script>
+</body>
+</html>
