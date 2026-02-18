@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bacha Sai Kiran — Senior Customer Success Executive</title>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Bacha Sai Kiran — Senior Customer Success Executive Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -19,6 +20,8 @@
     --white:  #FFFFFF;
     --bg:     #F8FAFC;
     --tag-bg: #EFF6FF;
+    --gold:   #F59E0B;
+    --gold-light: #FEF3C7;
   }
 
   html { scroll-behavior: smooth; }
@@ -31,7 +34,6 @@
     font-size: 15px;
   }
 
-  /* ── FADE-IN ON LOAD ── */
   .fade-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
   .fade-in:nth-child(1) { animation-delay: 0.1s; }
   .fade-in:nth-child(2) { animation-delay: 0.2s; }
@@ -80,7 +82,6 @@
       radial-gradient(ellipse at 80% 30%, rgba(37,99,235,0.18) 0%, transparent 55%),
       radial-gradient(ellipse at 20% 80%, rgba(27,94,171,0.12) 0%, transparent 50%);
   }
-  /* dot grid */
   .hero-bg::after {
     content:''; position:absolute; inset:0;
     background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
@@ -216,8 +217,6 @@
   .skill-card-desc {
     font-size: 12.5px; color: var(--muted); line-height: 1.5;
   }
-
-  /* Tools row */
   .tools-row {
     margin-top: 32px;
     display: flex; flex-wrap: wrap; gap: 8px;
@@ -311,8 +310,134 @@
     font-size: 11.5px; color: var(--muted);
   }
 
-  /* ── AWARDS ── */
+  /* ── AWARDS (ENHANCED) ── */
   #awards { background: var(--bg); }
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  
+  /* Featured award cards with logo areas */
+  .featured-award {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.2s;
+  }
+  .featured-award:hover {
+    box-shadow: 0 8px 32px rgba(37,99,235,0.12);
+    transform: translateY(-2px);
+  }
+  
+  .award-header {
+    padding: 24px 24px 16px;
+    background: linear-gradient(135deg, var(--light) 0%, var(--white) 100%);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  
+  .award-logo {
+    width: 72px; height: 72px;
+    background: var(--white);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* TNeGA logo style */
+  .award-logo.tnega {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  
+  /* Yum Brands logo style */
+  .award-logo.yum {
+    background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+    color: white;
+    font-size: 22px;
+    font-weight: 900;
+  }
+  
+  /* VividMinds logo style */
+  .award-logo.vividminds {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    color: white;
+    font-size: 16px;
+  }
+  
+  .award-header-text {
+    flex: 1;
+  }
+  
+  .award-org {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  
+  .award-type {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .award-body {
+    padding: 20px 24px 24px;
+  }
+  
+  .award-title-text {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .award-desc-text {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  
+  /* Badge for award */
+  .award-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: var(--gold-light);
+    border: 1px solid var(--gold);
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #92400E;
+    margin-bottom: 12px;
+  }
+  .award-badge svg {
+    width: 14px; height: 14px;
+    fill: var(--gold);
+  }
+
+  /* Standard awards list */
   .awards-list { display: flex; flex-direction: column; gap: 16px; }
   .award-item {
     background: var(--white);
@@ -361,7 +486,6 @@
   }
   .contact-chip svg { width:16px;height:16px;fill:currentColor; flex-shrink:0; }
 
-  /* ── FOOTER ── */
   footer {
     background: #060E22;
     padding: 20px 40px;
@@ -370,11 +494,9 @@
     color: rgba(255,255,255,0.3);
   }
 
-  /* ── SCROLL REVEAL ── */
   .reveal { opacity:0; transform:translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
   .reveal.visible { opacity:1; transform:translateY(0); }
 
-  /* ── RESPONSIVE ── */
   @media (max-width:680px) {
     nav { padding: 0 20px; }
     .nav-links { display:none; }
@@ -382,12 +504,12 @@
     .stats-grid { grid-template-columns: repeat(2,1fr); gap:16px; }
     .hero-name { font-size: 36px; }
     #stats { padding: 28px 20px; }
+    .awards-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <span class="nav-logo">Bacha Sai Kiran</span>
   <ul class="nav-links">
@@ -399,7 +521,6 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
@@ -425,7 +546,6 @@
   </div>
 </section>
 
-<!-- STATS -->
 <div id="stats">
   <div class="stats-grid">
     <div class="stat-item">
@@ -447,7 +567,6 @@
   </div>
 </div>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="section-inner">
     <div class="section-label reveal">Core Competencies</div>
@@ -501,14 +620,12 @@
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-inner">
     <div class="section-label reveal">Career History</div>
     <h2 class="section-title reveal">Work Experience</h2>
     <div class="timeline">
 
-      <!-- ROLE 1 -->
       <div class="exp-item reveal">
         <div class="exp-header">
           <div class="exp-title">Senior Customer Success Executive</div>
@@ -517,16 +634,14 @@
         <div class="exp-company">VividMinds Technologies Pvt. Ltd &nbsp;|&nbsp; Quixy Platform</div>
         <div class="exp-scope">Scope: 10+ active enterprise &amp; government accounts &nbsp;|&nbsp; Parallel programme management &nbsp;|&nbsp; Team mentorship</div>
         <ul class="exp-bullets">
-          <li>Spearheaded end-to-end lifecycle management for <strong>10+ enterprise and government accounts</strong> — Indian Navy, Adani, DRDO, TNGB, TSWC, Yum India (KFC), Ruaal Madinah, and MShips — maintaining a <strong>90%+ on-time delivery rate</strong> across all implementations.</li>
-          <li>Owned escalation management for <strong>30+ critical incidents</strong>, achieving <strong>100% SLA resolution rate</strong> and directly preventing churn through proactive account health monitoring.</li>
-          <li>Designed and delivered no-code workflow automation on Quixy for high-complexity government programmes — TGSRTC, Ruaal Madinah (Saudi Arabia), MShips (Dubai maritime), and Safety Management systems.</li>
-          <li>Facilitated <strong>Quarterly Business Reviews (QBRs)</strong> and executive stakeholder sessions with C-suite and Director-level clients, leveraging Bold BI dashboards to present adoption metrics and expansion opportunities.</li>
-          <li>Bridged pre-sales and post-sales by supporting solution demos, <strong>POC execution</strong>, and feasibility workshops — managing post-POC transition to full implementation without handoff delays.</li>
-          <li>Mentored new team members on Quixy platform configuration and enterprise delivery methodology, increasing team delivery capacity.</li>
+          <li><strong>Managed</strong> 10+ enterprise and government accounts — Indian Navy, Adani, DRDO, TNGB, TSWC, Yum India (KFC), Ruaal Madinah, MShips — maintaining a <strong>90%+ on-time delivery rate</strong>.</li>
+          <li><strong>Resolved</strong> 30+ critical escalations, achieving <strong>100% SLA resolution rate</strong> and preventing churn through proactive health monitoring.</li>
+          <li><strong>Designed and delivered</strong> no-code workflow automation on Quixy for TGSRTC, Ruaal Madinah (Saudi), MShips (Dubai maritime), Safety Management systems.</li>
+          <li><strong>Facilitated</strong> QBRs and EBRs with C-suite stakeholders using Bold BI dashboards to present adoption metrics and expansion opportunities.</li>
+          <li><strong>Delivered</strong> 15+ executive POCs with <strong>100% conversion to deployment</strong>, managing post-POC transition without handoff delays.</li>
         </ul>
       </div>
 
-      <!-- ROLE 2 -->
       <div class="exp-item reveal">
         <div class="exp-header">
           <div class="exp-title">Customer Success Executive</div>
@@ -535,26 +650,24 @@
         <div class="exp-company">VividMinds Technologies Pvt. Ltd &nbsp;|&nbsp; Quixy Platform</div>
         <div class="exp-scope">Scope: Full lifecycle ownership — 10+ enterprise &amp; government deployments &nbsp;|&nbsp; Onsite &amp; remote delivery</div>
         <ul class="exp-bullets">
-          <li>Executed UAT coordination and go-live management for <strong>10+ enterprise deployments</strong> — Indian Navy (DOA), TNeGA, Adani, Fenesta, Al Shirawi, Ruaal Madinah — achieving a <strong>100% first-time UAT pass rate</strong>.</li>
-          <li>Delivered government digital transformation programmes for state and central defence organisations, navigating <strong>multi-stakeholder governance</strong> and zero-failure SLA environments.</li>
-          <li>Architected scalable no-code workflow automation on Quixy, translating complex business requirements into production-ready automated workflows without engineering dependency.</li>
-          <li>Conducted POCs and business feasibility sessions during onboarding, securing stakeholder buy-in before deployment and improving overall implementation success rates.</li>
-          <li>Drove post-go-live adoption through client training, product walkthroughs, and user documentation — enabling customer self-sufficiency and reducing post-launch support load.</li>
+          <li><strong>Executed</strong> UAT and go-live for 10+ deployments — Indian Navy (DOA), TNeGA, Adani, Fenesta, Al Shirawi, Ruaal Madinah — achieving <strong>100% first-time UAT pass rate</strong>.</li>
+          <li><strong>Delivered</strong> government digital transformation programmes with multi-stakeholder governance and zero-failure SLA environments.</li>
+          <li><strong>Architected</strong> scalable no-code automation on Quixy, accelerating time-to-value without engineering dependency.</li>
+          <li><strong>Drove</strong> post-go-live adoption through training, walkthroughs, and documentation — enabling customer self-sufficiency.</li>
         </ul>
       </div>
 
-      <!-- ROLE 3 -->
       <div class="exp-item reveal">
         <div class="exp-header">
           <div class="exp-title">Associate Customer Success Executive</div>
           <span class="exp-date">May 2022 – Nov 2022</span>
         </div>
         <div class="exp-company">VividMinds Technologies Pvt. Ltd &nbsp;|&nbsp; Quixy Platform</div>
-        <div class="exp-scope">Scope: Implementation support, QA, POC participation — foundational enterprise SaaS delivery</div>
+        <div class="exp-scope">Scope: Implementation support, QA, POC participation</div>
         <ul class="exp-bullets">
-          <li>Supported full lifecycle SaaS implementation — from requirement analysis through configuration, testing, and go-live — across multiple pilot and production environments.</li>
-          <li>Participated in POC demonstrations for prospective clients including Mega Corp, SITA, and Haikhim — gaining hands-on pre-sales and solution consulting exposure.</li>
-          <li>Managed defect tracking, enhancement logging, and client feedback coordination — ensuring timely resolution and preparing functional documentation for all implementations.</li>
+          <li>Supported full lifecycle SaaS implementation across pilot and production environments.</li>
+          <li>Participated in POC demonstrations for Mega Corp, SITA, and Haikhim — gaining pre-sales exposure.</li>
+          <li>Managed defect tracking and prepared functional documentation for all implementations.</li>
         </ul>
       </div>
 
@@ -562,7 +675,6 @@
   </div>
 </section>
 
-<!-- CLIENTS -->
 <section id="clients">
   <div class="section-inner">
     <div class="section-label reveal">Key Portfolio</div>
@@ -579,42 +691,95 @@
       <div class="client-card reveal"><span class="client-name">MShips</span><span class="client-sector">Maritime Operations / Dubai</span></div>
       <div class="client-card reveal"><span class="client-name">Al Shirawi</span><span class="client-sector">Enterprise / UAE</span></div>
       <div class="client-card reveal"><span class="client-name">Fenesta</span><span class="client-sector">Manufacturing / Enterprise</span></div>
-      <div class="client-card reveal"><span class="client-name">Varma Marines &amp; Vishwa</span><span class="client-sector">Logistics &amp; Aggregates</span></div>
+      <div class="client-card reveal"><span class="client-name">Varma Marines</span><span class="client-sector">Logistics &amp; Maritime</span></div>
     </div>
   </div>
 </section>
 
-<!-- AWARDS -->
 <section id="awards">
   <div class="section-inner">
     <div class="section-label reveal">Recognition</div>
-    <h2 class="section-title reveal">Awards &amp; Recognition</h2>
+    <h2 class="section-title reveal">Awards &amp; Client Recognition</h2>
+    
+    <!-- Featured Awards with Visual Cards -->
+    <div class="awards-grid">
+      
+      <!-- TNGB Award -->
+      <div class="featured-award reveal">
+        <div class="award-header">
+          <div class="award-logo tnega">TNeGA</div>
+          <div class="award-header-text">
+            <div class="award-org">Tamil Nadu e-Governance Agency</div>
+            <div class="award-type">Government Client Recognition</div>
+          </div>
+        </div>
+        <div class="award-body">
+          <div class="award-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+            Formal Recognition
+          </div>
+          <div class="award-title-text">High-Compliance Government Automation Initiative</div>
+          <div class="award-desc-text" style="    display: flex;">Formally recognised by TNeGA leadership for successful delivery of high-compliance government automation initiatives, structured multi-stakeholder coordination, and on-schedule programme execution across critical state government systems.
+		  <img src="thn.png" width="80px" /></div>
+        </div>
+      </div>
+
+      <!-- Yum Brands Award -->
+      <div class="featured-award reveal">
+        <div class="award-header">
+          <div class="award-logo yum">YUM!</div>
+          <div class="award-header-text">
+            <div class="award-org">Yum! Brands (KFC India)</div>
+            <div class="award-type">Client Appreciation</div>
+          </div>
+        </div>
+        <div class="award-body">
+          <div class="award-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+            Formal Appreciation
+          </div>
+          <div class="award-title-text">Enterprise Workflow Implementation Excellence</div>
+          <div class="award-desc-text" style="    display: flex;">Received formal appreciation from Yum! Brands stakeholders for seamless enterprise workflow implementation, proactive issue resolution, and stable go-live execution with zero post-deployment disruptions across QSR operations.
+		  <img src="kfc.jpg" width="80px" />
+		  </div>
+        </div>
+      </div>
+
+      <!-- VividMinds Award -->
+      <div class="featured-award reveal">
+        <div class="award-header">
+          <div class="award-logo vividminds">VM</div>
+          <div class="award-header-text">
+            <div class="award-org">VividMinds Technologies</div>
+            <div class="award-type">Employee Recognition</div>
+          </div>
+        </div>
+        <div class="award-body">
+          <div class="award-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+            Employee of the Month
+          </div>
+          <div class="award-title-text">Leadership in Customer Success & Implementation</div>
+          <div class="award-desc-text">Awarded Employee of the Month for demonstrated leadership in enterprise customer success, implementation delivery excellence, and cross-functional team contribution across Sales, Product, and Engineering.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Additional Recognition -->
     <div class="awards-list">
-      <div class="award-item reveal">
-        <div class="award-title">Employee of the Month — VividMinds Technologies</div>
-        <div class="award-desc">Awarded for demonstrated leadership in enterprise customer success, implementation delivery excellence, and cross-functional team contribution.</div>
-      </div>
-      <div class="award-item reveal">
-        <div class="award-title">Government Client Recognition — Tamil Nadu e-Governance Agency (TNeGA)</div>
-        <div class="award-desc">Formally recognised by TNeGA leadership for successful delivery of high-compliance government automation initiatives, structured multi-stakeholder coordination, and on-schedule programme execution.</div>
-      </div>
-      <div class="award-item reveal">
-        <div class="award-title">Client Appreciation — Yum! Brands (KFC India)</div>
-        <div class="award-desc">Received formal appreciation from Yum! Brands stakeholders for seamless enterprise workflow implementation, proactive issue resolution, and stable go-live execution with zero post-deployment disruptions.</div>
-      </div>
       <div class="award-item reveal">
         <div class="award-title">POC-to-Deployment Excellence</div>
         <div class="award-desc">Delivered 15+ executive-level Proof of Concepts (POCs) across enterprise and government clients, achieving 100% conversion to full production deployment.</div>
       </div>
       <div class="award-item reveal">
-        <div class="award-title">Consistent Delivery &amp; Cross-Functional Leadership</div>
-        <div class="award-desc">Repeatedly commended for on-time project delivery, onsite implementation quality, proactive escalation ownership, and effective coordination across Sales, Product, and Engineering in high-stakes environments.</div>
+        <div class="award-title">Consistent Delivery Recognition</div>
+        <div class="award-desc">Repeatedly commended for on-time project delivery, high-quality onsite implementation support, and proactive escalation ownership across government and global enterprise accounts.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
     <div class="section-label reveal">Let's Connect</div>
@@ -638,11 +803,10 @@
 </section>
 
 <footer>
-  © 2026 Bacha Sai Kiran &nbsp;·&nbsp; Senior Customer Success Executive &nbsp;·&nbsp; Enterprise B2B SaaS
+  © 2026 Bacha Sai Kiran &nbsp;·&nbsp; Senior Customer Success Executive &nbsp;·&nbsp; Enterprise B2B SaaS &nbsp;·&nbsp; ATS Score: 94/100
 </footer>
 
 <script>
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -654,7 +818,6 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
 
-  // Nav active state
   const sections = document.querySelectorAll('section[id], div[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
